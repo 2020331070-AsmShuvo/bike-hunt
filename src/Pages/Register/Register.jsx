@@ -1,7 +1,12 @@
-import React from "react";
-
+import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import { updateProfile } from "firebase/auth";
 const Register = () => {
-  const handleSubmit = (e) => {
+  useContext;
+  const { createUser, user, myTheme, logOut } = useContext(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
     const form = e.target;
     const first_name = form.first_name.value;
     const last_name = form.last_name.value;
@@ -12,7 +17,34 @@ const Register = () => {
       alert("Password dont match");
       return;
     }
-    
+    console.log(first_name, last_name, email, password, password_confirmation);
+
+    createUser(email, password)
+      .then((res) => {
+        console.log(res.user);
+        const userCredential = res.user;
+        updateProfile(userCredential, {
+          displayName: first_name,
+        })
+          .then(() => {
+            console.log("Creaetd user : ", userCredential);
+            alert("Registration Successfuil");
+            form.reset();
+            logOut();
+          })
+          .catch((err) => {
+            console.log("Error while updating profile: ", err);
+            alert("Profile is not updated");
+            return;
+          });
+
+        form.reset();
+      })
+      .catch((err) => {
+        console.log("Err: ", err);
+        alert("Registration Failed! Your email is already in use");
+        return;
+      });
   };
   return (
     <div>
@@ -84,7 +116,7 @@ const Register = () => {
               </div>
 
               <form
-                onSubmit={handleSubmit}
+                onSubmit={handleRegister}
                 action="#"
                 className="mt-8 grid grid-cols-6 gap-6"
               >

@@ -10,6 +10,9 @@ import Post from "./Pages/Post/Post.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import AuthProvider from "./Providers/AuthProviders.jsx";
 import Login from "./Pages/Login/Login.jsx";
+import Bikes from "./Pages/Bikes/Bikes.jsx";
+import BookBike from "./Pages/BookBike/BookBike.jsx";
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +34,20 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login />,
+      },
+      {
+        path: "/bikes",
+        element: <Bikes />,
+      },
+      {
+        path: "/bikes/:id",
+        element: (
+          <PrivateRoute>
+            <BookBike />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/bikes/${params.id}`),
       },
     ],
   },

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   return (
     <div>
       <div className="navbar bg-main text-white h-[40px]">
@@ -65,18 +67,46 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end">
-          <Link
-            to="/appoint"
-            class="group relative inline-block overflow-hidden border border-primary px-8 py-1 focus:outline-none focus:ring"
-          >
-            <span class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-indigo-500"></span>
+        {user?.email ? (
+          <div className="navbar-end gap-2">
+            <p className="text-sm border rounded-full px-1 text-gray-300">
+              {user?.email}
+            </p>
+            <div class="group relative inline-block overflow-hidden border  border-red-800 px-8 py-1 focus:outline-none focus:ring">
+              <span class="absolute inset-y-0 left-0 w-[2px] bg-red-800 transition-all group-hover:w-full group-active:bg-indigo-500"></span>
 
-            <button class="relative text-sm font-medium text-primary transition-colors group-hover:text-main">
-              Appointment
-            </button>
-          </Link>
-        </div>
+              <button
+                onClick={logOut}
+                class="relative text-sm font-medium text-red-800 transition-colors group-hover:text-main"
+              >
+                Logout
+              </button>
+            </div>
+          </div>
+        ) : (
+          <div className="navbar-end gap-1">
+            <Link
+              to="/login"
+              class="group relative inline-block overflow-hidden border border-primary px-8 py-1 focus:outline-none focus:ring"
+            >
+              <span class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-indigo-500"></span>
+
+              <button class="relative text-sm font-medium text-primary transition-colors group-hover:text-main">
+                Login
+              </button>
+            </Link>
+            <Link
+              to="/register"
+              class="group relative inline-block overflow-hidden border border-primary px-8 py-1 focus:outline-none focus:ring"
+            >
+              <span class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-indigo-500"></span>
+
+              <button class="relative text-sm font-medium text-primary transition-colors group-hover:text-main">
+                Register
+              </button>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

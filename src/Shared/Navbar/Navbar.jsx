@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-transparent h-[40px]">
+      <div className="navbar bg-main text-white h-[40px]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -28,40 +28,40 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <Link to="/rental">Rental</Link>
+                <NavLink to="/rental">Rental</NavLink>
               </li>
               <li>
-                <Link to="/vlogs">Vlogs</Link>
+                <NavLink to="/vlogs">Vlogs</NavLink>
               </li>
               <li>
-                <Link to="/bookings">Bookings</Link>
+                <NavLink to="/bookings">Bookings</NavLink>
               </li>
               <li>
-                <Link to="/post">Post</Link>
+                <NavLink to="/post">Post</NavLink>
               </li>
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">daisyUI</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            <li>
-              <Link to="/">Home</Link>
+          <ul className="menu menu-horizontal px-1 gap-4">
+            <li className="font-semibold text-lg border-b">
+              <NavLink to="/">Home</NavLink>
             </li>
-            <li>
-              <Link to="/rental">Rental</Link>
+            <li className="font-semibold text-lg border-b">
+              <NavLink to="/rental">Rental</NavLink>
             </li>
-            <li>
-              <Link to="/vlogs">Vlogs</Link>
+            <li className="font-semibold text-lg border-b">
+              <NavLink to="/vlogs">Vlogs</NavLink>
             </li>
-            <li>
-              <Link to="/bookings">Bookings</Link>
+            <li className="font-semibold text-lg border-b">
+              <NavLink to="/bookings">Bookings</NavLink>
             </li>
-            <li>
-              <Link to="/post">Post</Link>
+            <li className="font-semibold text-lg border-b">
+              <NavLink to="/post">Post</NavLink>
             </li>
           </ul>
         </div>
@@ -72,9 +72,9 @@ const Navbar = () => {
           >
             <span class="absolute inset-y-0 left-0 w-[2px] bg-primary transition-all group-hover:w-full group-active:bg-indigo-500"></span>
 
-            <span class="relative text-sm font-medium text-primary transition-colors group-hover:text-white">
+            <button class="relative text-sm font-medium text-primary transition-colors group-hover:text-main">
               Appointment
-            </span>
+            </button>
           </Link>
         </div>
       </div>

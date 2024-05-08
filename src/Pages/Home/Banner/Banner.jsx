@@ -2,16 +2,17 @@ import { Link } from "react-router-dom";
 import bike1 from "../../../assets/carousel/bike1.jpg";
 import bike2 from "../../../assets/carousel/bike2.jpg";
 import bike3 from "../../../assets/carousel/bike3.jpg";
+import bike4 from "../../../assets/carousel/bike5.jpg";
 const Banner = () => {
   return (
     <div>
-      <div className="carousel w-full h-[580px]">
+      <div className="carousel w-full h-[600px]">
         <div id="slide1" className="carousel-item relative w-full">
           <img src={bike1} className="w-full" />
           <div className="absolute h-full items-center bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]  flex flex-col left-0 top-0 gap-4">
             <div className="space-y-7 pl-16 mt-16">
               <h1 className="text-6xl w-1/4 text-white font-bold">
-                Affordable Price For Car Servicing
+                Rent a motorcycle and go on a great adventure
               </h1>
               <p className="text-lg w-1/2 text-gray-200">
                 There are many variations of passages of available, but the
@@ -20,7 +21,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -44,7 +45,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -95,7 +96,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -119,7 +120,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -170,7 +171,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -194,7 +195,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">
@@ -232,7 +233,7 @@ const Banner = () => {
           </div>
         </div>
         <div id="slide4" className="carousel-item relative w-full">
-          <img src={bike1} className="w-full" />
+          <img src={bike4} className="w-full" />
           <div className="absolute h-full items-center bg-gradient-to-r from-[#151515] to-[rgba(21,21,21,0)]  flex flex-col left-0 top-0 gap-4">
             <div className="space-y-7 pl-16 mt-16">
               <h1 className="text-6xl w-1/4 text-white font-bold">
@@ -245,7 +246,7 @@ const Banner = () => {
               <div className="flex flex-col md:flex-row gap-2">
                 <Link
                   to="/discover"
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                 >
                   <span class="absolute -start-full transition-all group-hover:start-4">
                     <svg
@@ -269,7 +270,7 @@ const Banner = () => {
                   </span>
                 </Link>
                 <Link
-                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-white focus:outline-none focus:ring active:bg-primary"
+                  class="group relative inline-flex items-center overflow-hidden rounded bg-primary px-8 py-3 text-main focus:outline-none focus:ring active:bg-primary"
                   to="/latest"
                 >
                   <span class="absolute -end-full transition-all group-hover:end-4">

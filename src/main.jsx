@@ -9,6 +9,7 @@ import Error from "./Pages/Error/Error.jsx";
 import Post from "./Pages/Post/Post.jsx";
 import Register from "./Pages/Register/Register.jsx";
 import AuthProvider from "./Providers/AuthProviders.jsx";
+import Login from "./Pages/Login/Login.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
       },
     ],
   },
